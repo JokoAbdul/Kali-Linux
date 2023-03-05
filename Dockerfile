@@ -1,6 +1,9 @@
 FROM ubuntu:latest
 RUN apt update -y > /dev/null 2>&1 && apt upgrade -y > /dev/null 2>&1 && apt install locales -y \
 && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+RUN apt-get -qq install -y git python3 python3-pip \
+    locales python3-lxml aria2 \
+    curl pv jq nginx npm
 ENV LANG en_US.utf8
 ARG NGROK_TOKEN
 ENV NGROK_TOKEN=${NGROK_TOKEN}
