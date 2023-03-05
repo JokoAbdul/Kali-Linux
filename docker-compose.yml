@@ -2,10 +2,7 @@ version: "3.9"
 
 services:
   kali:
-    container_name: kali
-        build:
-            context: .
-            dockerfile: Dockerfile
+    image: ghcr.io/missemily2022/Kali-Linux:new
     environment:
       - NGROK_TOKEN=${NGROK_TOKEN}
     ports:
