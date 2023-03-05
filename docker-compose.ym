@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  kali:
+    image: ghcr.io/missemily22/Kali-Linux:main
+    container_name: kali
+    environment:
+      - NGROK_TOKEN=${NGROK_TOKEN}
+    ports:
+      - 8080:8080
+    restart: unless-stopped
